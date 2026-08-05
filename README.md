@@ -86,28 +86,6 @@ Getting started is **easy**! Thanks to **Monolithic Clean Architecture**, everyt
 > **Note**: The database will be created automatically if it does not exist.  
 
 
-
-
-
-# Run The Project: IIS Web Server  
-
-Deployment is **easy**! Thanks to **Monolithic Clean Architecture**, both the front end and back end are in a single deployable unit, making the process straightforward.  
-
-For deployment to IIS:  
-
-1. **Publish the project**:  
-   - Right-click the project > Publish.  
-   - Choose a folder to output the files.  
-
-2. **Deploy to IIS**:  
-   - Copy the published files to your IIS directory.  
-   - Configure IIS to point to the folder and ensure database connectivity.  
-
-> For detailed instructions, refer to [Microsoft's official IIS deployment documentation](https://learn.microsoft.com/en-us/aspnet/core/tutorials/publish-to-iis).  
-
-
-
-
 # Live Demo Link
 - **URL**: [https://whms-lte-fs.csharpasp.net/](https://whms-lte-fs.csharpasp.net/)
 - ✅ **Username**: admin@root.com  
