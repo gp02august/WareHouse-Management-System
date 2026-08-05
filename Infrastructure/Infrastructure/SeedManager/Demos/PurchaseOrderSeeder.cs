@@ -46,8 +46,9 @@ public class PurchaseOrderSeeder
         var taxes = await _taxRepository.GetQuery().Select(x => x.Id).ToListAsync();
         var products = await _productRepository.GetQuery().ToListAsync();
 
-        var dateFinish = DateTime.Now;
-        var dateStart = new DateTime(dateFinish.AddMonths(-12).Year, dateFinish.AddMonths(-12).Month, 1);
+        var dateFinish = DateTime.UtcNow;
+        var startMonth = dateFinish.AddMonths(-12);
+        var dateStart = new DateTime(startMonth.Year, startMonth.Month, 1, 0, 0, 0, DateTimeKind.Utc);
 
         for (DateTime date = dateStart; date < dateFinish; date = date.AddMonths(1))
         {
@@ -107,6 +108,6 @@ public class PurchaseOrderSeeder
             daysInMonth.Remove(day);
         }
 
-        return selectedDays.Select(day => new DateTime(year, month, day)).ToArray();
+        return selectedDays.Select(day => new DateTime(year, month, day, 0, 0, 0, DateTimeKind.Utc)).ToArray();
     }
 }

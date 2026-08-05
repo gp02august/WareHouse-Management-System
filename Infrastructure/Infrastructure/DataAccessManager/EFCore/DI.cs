@@ -4,6 +4,7 @@ using Application.Common.Repositories;
 using Infrastructure.DataAccessManager.EFCore.Contexts;
 using Infrastructure.DataAccessManager.EFCore.Repositories;
 using Microsoft.EntityFrameworkCore;
+using Npgsql.EntityFrameworkCore.PostgreSQL;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -42,20 +43,20 @@ public static class DI
             //    );
             //    break;
 
-            case "SqlServer":
+            case "PostgreSQL":
             default:
                 services.AddDbContext<DataContext>(options =>
-                    options.UseSqlServer(connectionString)
+                    options.UseNpgsql(connectionString)
                     .LogTo(Log.Information, LogLevel.Information)
                     .EnableSensitiveDataLogging()
                 );
                 services.AddDbContext<CommandContext>(options =>
-                    options.UseSqlServer(connectionString)
+                    options.UseNpgsql(connectionString)
                     .LogTo(Log.Information, LogLevel.Information)
                     .EnableSensitiveDataLogging()
                 );
                 services.AddDbContext<QueryContext>(options =>
-                    options.UseSqlServer(connectionString)
+                    options.UseNpgsql(connectionString)
                     .LogTo(Log.Information, LogLevel.Information)
                     .EnableSensitiveDataLogging()
                 );
