@@ -85,11 +85,7 @@ Getting started is **easy**! Thanks to **Monolithic Clean Architecture**, everyt
 
 > **Note**: The database will be created automatically if it does not exist.  
 
-
-# Live Demo Link
-- **URL**: [https://whms-lte-fs.csharpasp.net/](https://whms-lte-fs.csharpasp.net/)
-- ✅ **Username**: admin@root.com  
-- ✅ **Password**: 123456  
+ 
 
 
 
